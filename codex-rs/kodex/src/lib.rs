@@ -7,5 +7,5 @@
 mod prompt;
 mod provider;
 
-pub use prompt::KodexContextContributor;
+pub use prompt::install_kodex_extension;
 pub use provider::KodexModelProvider;

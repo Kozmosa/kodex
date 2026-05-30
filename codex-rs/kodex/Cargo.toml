@@ -13,29 +13,19 @@ doctest = false
 workspace = true
 
 [dependencies]
-# Extension API (for ContextContributor, ToolContributor, etc.)
+# Extension API (for ContextContributor, ExtensionRegistryBuilder, etc.)
 codex-extension-api = { workspace = true }
 
-# Core (for Config type used by ExtensionRegistry)
+# Core (for Config type used by ExtensionRegistryBuilder)
 codex-core = { workspace = true }
 
-# Model provider (for ModelProvider trait)
-codex-model-provider = { workspace = true }
-codex-model-provider-info = { workspace = true }
-codex-models-manager = { workspace = true }
-
-# Auth
-codex-login = { workspace = true }
-
-# Protocol types
-codex-protocol = { workspace = true }
+# Model provider (for ModelProvider trait — uncomment when implementing)
+# codex-model-provider = { workspace = true }
+# codex-model-provider-info = { workspace = true }
+# codex-models-manager = { workspace = true }
 
 # Async
-async-trait = { workspace = true }
 tokio = { workspace = true, features = ["sync"] }
 
 # Logging
 tracing = { workspace = true, features = ["log"] }
-
-# Serialization (for future config extensions)
-serde = { workspace = true, features = ["derive"] }
