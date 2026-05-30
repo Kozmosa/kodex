@@ -8384,6 +8384,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "kodex"
+version = "0.0.0"
+dependencies = [
+ "codex-core",
+ "codex-extension-api",
+ "tokio",
+ "tracing",
+]
+
+[[package]]
 name = "kqueue"
 version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
