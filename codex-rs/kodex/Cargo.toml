@@ -1,0 +1,41 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "kodex"
+version.workspace = true
+
+[lib]
+name = "kodex"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+# Extension API (for ContextContributor, ToolContributor, etc.)
+codex-extension-api = { workspace = true }
+
+# Core (for Config type used by ExtensionRegistry)
+codex-core = { workspace = true }
+
+# Model provider (for ModelProvider trait)
+codex-model-provider = { workspace = true }
+codex-model-provider-info = { workspace = true }
+codex-models-manager = { workspace = true }
+
+# Auth
+codex-login = { workspace = true }
+
+# Protocol types
+codex-protocol = { workspace = true }
+
+# Async
+async-trait = { workspace = true }
+tokio = { workspace = true, features = ["sync"] }
+
+# Logging
+tracing = { workspace = true, features = ["log"] }
+
+# Serialization (for future config extensions)
+serde = { workspace = true, features = ["derive"] }

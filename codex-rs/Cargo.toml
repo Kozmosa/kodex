@@ -114,6 +114,7 @@ members = [
     "codex-experimental-api-macros",
     "plugin",
     "model-provider",
+    "kodex",
 ]
 resolver = "2"
 
@@ -240,6 +241,7 @@ codex-utils-string = { path = "utils/string" }
 codex-utils-template = { path = "utils/template" }
 codex-v8-poc = { path = "v8-poc" }
 codex-windows-sandbox = { path = "windows-sandbox-rs" }
+kodex = { path = "kodex" }
 core_test_support = { path = "core/tests/common" }
 mcp_test_support = { path = "mcp-server/tests/common" }
 

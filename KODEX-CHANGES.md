@@ -46,7 +46,8 @@ git rebase main
 
 | 文件 | 修改内容 | 原因 |
 |------|---------|------|
-| `codex-rs/Cargo.toml` | workspace members 中添加 `kodex` | 注册 kodex 自定义 crate |
+| `codex-rs/Cargo.toml` | workspace members 中添加 `"kodex"` | 注册 kodex 自定义 crate |
+| `codex-rs/Cargo.toml` | workspace.dependencies 中添加 `kodex = { path = "kodex" }` | 允许其他 crate 依赖 kodex |
 
 ### 模型/Provider 层
 
