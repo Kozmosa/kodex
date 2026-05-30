@@ -1,3 +1,22 @@
+# Kodex
+
+## Commit Message 规范
+
+Commit message 使用 conventional commit 格式，tag 部分保持英文，主体部分使用简单易懂的中文撰写。名词和代码标识符保持英文。
+
+格式：`<type>: <中文描述>`
+
+示例：
+- `feat: 添加自定义 ModelProvider 实现`
+- `fix: 修正 ContextContributor 的生命周期签名`
+- `chore: 更新 Cargo.lock 依赖`
+- `refactor: 拆分 prompt 组装逻辑到独立模块`
+- `docs: 补充 KODEX-CHANGES.md 同步检查清单`
+
+常用 type：`feat`、`fix`、`chore`、`refactor`、`docs`、`test`、`style`、`perf`
+
+---
+
 # Rust/codex-rs
 
 In the codex-rs folder where the rust code lives:
