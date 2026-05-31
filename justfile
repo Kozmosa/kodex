@@ -11,14 +11,14 @@ python := if os_family() == "windows" { "python" } else { "python3" }
 help:
     just -l
 
-# `codex`
-alias c := codex
-codex *args:
-    cargo run --bin codex -- {args}
+# `kodex`
+alias c := kodex
+kodex *args:
+    cargo run --bin kodex -- {args}
 
-# `codex exec`
+# `kodex exec`
 exec *args:
-    cargo run --bin codex -- exec {args}
+    cargo run --bin kodex -- exec {args}
 
 # Start `codex exec-server` and run codex-tui.
 [no-cd]
