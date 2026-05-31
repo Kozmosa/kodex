@@ -65,7 +65,14 @@ git rebase main
 
 | 文件 | 修改内容 | 原因 |
 |------|---------|------|
-| *(待添加)* | | |
+| `codex-rs/tui/src/app/input.rs` | `should_handle_backtrack_esc()` 返回 false | 禁用 ESC 触发的 backtrack 功能 |
+
+### 二进制命名
+
+| 文件 | 修改内容 | 原因 |
+|------|---------|------|
+| `codex-rs/cli/Cargo.toml` | `[[bin]] name` 从 `codex` 改为 `kodex` | 编译产物命名为 kodex |
+| `justfile` | `codex` recipe 改为 `kodex`，`--bin codex` 改为 `--bin kodex` | 开发命令匹配新二进制名 |
 
 ### 扩展注册
 
