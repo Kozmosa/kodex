@@ -608,6 +608,11 @@ pub struct Config {
     /// active context or only tokens after the carried compaction-window prefix.
     pub model_auto_compact_token_limit_scope: AutoCompactTokenLimitScope,
 
+    /// Whether to force local compaction regardless of provider capabilities.
+    /// When `true`, always uses model-based summarization instead of
+    /// provider-specific remote compact endpoints.
+    pub force_local_compaction: bool,
+
     /// Key into the model_providers map that specifies which provider to use.
     pub model_provider_id: String,
 
@@ -3394,6 +3399,7 @@ impl Config {
             model_auto_compact_token_limit_scope: cfg
                 .model_auto_compact_token_limit_scope
                 .unwrap_or_default(),
+            force_local_compaction: cfg.force_local_compaction.unwrap_or(true),
             model_provider_id,
             model_provider,
             cwd: resolved_cwd,

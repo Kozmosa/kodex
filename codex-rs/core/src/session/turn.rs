@@ -794,7 +794,7 @@ async fn run_auto_compact(
     reason: CompactionReason,
     phase: CompactionPhase,
 ) -> CodexResult<()> {
-    if should_use_remote_compact_task(turn_context.provider.info()) {
+    if should_use_remote_compact_task(turn_context.provider.info(), turn_context.config.force_local_compaction) {
         if turn_context.features.enabled(Feature::RemoteCompactionV2) {
             emit_compact_metric(
                 &sess.services.session_telemetry,

@@ -4783,6 +4783,11 @@
       ],
       "description": "Optional URI-based file opener. If set, citations to files in the model output will be hyperlinked using the specified URI scheme."
     },
+    "force_local_compaction": {
+      "default": true,
+      "description": "Force local compaction even when the provider supports remote compaction. When `true`, compaction always uses the local model-based summarization path instead of provider-specific remote compact endpoints. Defaults to `true`.",
+      "type": "boolean"
+    },
     "forced_chatgpt_workspace_id": {
       "allOf": [
         {

@@ -71,6 +71,10 @@ const fn default_allow_login_shell() -> Option<bool> {
     Some(true)
 }
 
+const fn default_force_local_compaction() -> Option<bool> {
+    Some(true)
+}
+
 fn default_history() -> Option<History> {
     Some(History::default())
 }
@@ -154,6 +158,13 @@ pub struct ConfigToml {
     /// Controls whether the auto-compaction limit applies to the full context or
     /// only to tokens after the carried prefix in the current compaction window.
     pub model_auto_compact_token_limit_scope: Option<AutoCompactTokenLimitScope>,
+
+    /// Force local compaction even when the provider supports remote compaction.
+    /// When `true`, compaction always uses the local model-based summarization
+    /// path instead of provider-specific remote compact endpoints.
+    /// Defaults to `true`.
+    #[serde(default = "default_force_local_compaction")]
+    pub force_local_compaction: Option<bool>,
 
     /// Default approval policy for executing commands.
     pub approval_policy: Option<AskForApproval>,
