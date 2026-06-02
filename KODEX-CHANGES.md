@@ -80,6 +80,12 @@ git rebase main
 |------|---------|------|
 | `codex-rs/app-server/src/extensions.rs` | 添加 kodex 扩展的 `install` 调用 | 注册自定义扩展 |
 
+### Remote Control / 自建中继
+
+| 文件 | 修改内容 | 原因 |
+|------|---------|------|
+| `codex-rs/app-server-transport/src/transport/remote_control/protocol.rs` | `normalize_remote_control_url()` 放宽域名白名单，接受任意 HTTP/HTTPS URL | 支持自建 relay server (kodex-server) |
+
 ### 配置/其他
 
 | 文件 | 修改内容 | 原因 |

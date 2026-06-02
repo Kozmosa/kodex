@@ -187,7 +187,7 @@ pub(super) fn normalize_remote_control_url(
         io::Error::new(
             ErrorKind::InvalidInput,
             format!(
-                "invalid remote control URL `{remote_control_url}`; expected HTTPS URL for chatgpt.com or chatgpt-staging.com, or HTTP/HTTPS URL for localhost"
+                "invalid remote control URL `{remote_control_url}`; expected HTTP/HTTPS URL"
             ),
         )
     };
@@ -217,6 +217,13 @@ pub(super) fn normalize_remote_control_url(
         }
         "http" if is_localhost(&host) => {
             websocket_url.set_scheme("ws").map_err(map_scheme_error)?;
+        }
+        // Allow any other http/https URL (for self-hosted relay servers)
+        "http" => {
+            websocket_url.set_scheme("ws").map_err(map_scheme_error)?;
+        }
+        "https" => {
+            websocket_url.set_scheme("wss").map_err(map_scheme_error)?;
         }
         _ => return Err(map_scheme_error(())),
     }
