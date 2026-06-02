@@ -85,6 +85,7 @@ git rebase main
 | 文件 | 修改内容 | 原因 |
 |------|---------|------|
 | `codex-rs/app-server-transport/src/transport/remote_control/protocol.rs` | `normalize_remote_control_url()` 放宽域名白名单，接受任意 HTTP/HTTPS URL | 支持自建 relay server (kodex-server) |
+| `codex-rs/app-server-daemon/src/lib.rs` | `ensure_supported_platform()` 在 Windows 返回 Ok() | 启用 Windows 平台 remote-control 支持（基于 codex-uds 跨平台抽象） |
 
 ### 配置/其他
 

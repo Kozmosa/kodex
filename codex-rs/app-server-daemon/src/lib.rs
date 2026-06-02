@@ -242,9 +242,8 @@ fn ensure_supported_platform() -> Result<()> {
 
 #[cfg(not(unix))]
 fn ensure_supported_platform() -> Result<()> {
-    Err(anyhow!(
-        "codex app-server daemon lifecycle is only supported on Unix platforms"
-    ))
+    // Windows support enabled via codex-uds cross-platform abstraction
+    Ok(())
 }
 
 struct Daemon {
