@@ -655,6 +655,17 @@ impl Daemon {
             return Ok(());
         }
 
+        // Fall back to current executable for development/non-standalone environments
+        if let Ok(current_exe) = std::env::current_exe() {
+            if current_exe.is_file() {
+                eprintln!(
+                    "Note: Using current executable as managed binary (development mode): {}",
+                    current_exe.display()
+                );
+                return Ok(());
+            }
+        }
+
         let managed_codex_path = self.managed_codex_bin.display();
         Err(anyhow!(
             "managed standalone Codex install not found at {managed_codex_path}\n\n\
